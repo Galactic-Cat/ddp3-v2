@@ -129,6 +129,11 @@ var jinx = function jinx() {
     $(".loadDone").children("a").click(function() {
         $(".loadDone").slideUp(del);
     });
+    $.keyDown(function() {
+        if (event.which == 17) {
+            $.keyUp()
+        }
+    })
 };
 
 $(document).ready(function() {
