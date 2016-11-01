@@ -1,0 +1,134 @@
+h1, p, a, li, label, h2, h3, h4, h5 {
+    font-family: "Trebuchet MS";
+}
+
+p, a, li, label {
+    font-size: 15px;
+}
+
+nav li:hover {
+    cursor: pointer;
+    /*background-color: lightGray;*/
+}
+
+hr {
+  border-top: 0 !important;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color:#888;
+  height: 1px !important;
+}
+
+.navbar-right li {
+    padding-right: 10px;
+}
+
+.navbar-right li:last-child {
+    padding-right: 40px;
+}
+
+.content {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://wallpaperscraft.com/image/yellow_red_spots_background_abstract_65559_1920x1080.jpg");
+    overflow: hidden;
+}
+
+.content-simulate {
+    overflow-y: auto;
+}
+
+.lock {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    text-align:center;
+}
+
+.lockC {
+    left: 0;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.lock img {
+    margin-top: 10vh;
+}
+
+.section {
+    width: 70vw;
+    max-height: 75vh;
+    margin: 60px 15vw 5vh 15vw;
+    overflow:auto;
+}
+
+.sub {
+    color: gray;
+    font-family: monospace;
+}
+
+.mhp-inp-first-div {
+    width: 20vw;
+}
+
+.mhp-inp-first-div .btn {
+    color: white;
+}
+
+.right {
+    float:right;
+    text-align: right;
+}
+
+.left {
+    float: left;
+    text-align: right;
+}
+
+.why2 {
+    max-height: 320px;
+    overflow:auto;
+}
+
+#doors {
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+    max-width: none;
+    max-height: 479px;
+    font-size: 0;
+    white-space:nowrap;
+}
+
+#doors div {
+    margin-left: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dSimul {
+    width: 40vw;
+}
+
+.dSimul div {
+    width: 95%;
+    margin: 0px 2.5% 0px 2.5%;
+}
+
+#footer p {
+    position: fixed;
+    color: black;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px 2px 2px 0px !important;
+}
+
+.alert {
+    margin-bottom: -30px !important;
+}

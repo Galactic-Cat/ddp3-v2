@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title class="+title">Driedeurenprobleem</title>
+        <meta charset="UTF-8">
+        <link href="site/css/index.css" type="text/css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+        <link rel="icon" type="image/png" href="http://findicons.com/files/icons/2796/metro_uinvert_dock/128/aperture.png" />
+    </head>
+    <body>
+        <div class="content content-simulate">
+            <div class="section noQuery alert alert-danger"><strong>Foutmelding!</strong> jQuery is niet goed geladen! <a class="alert-link">Herlaad a.u.b. de pagina.</a></div>
+            <br>
+            <div id="first" class="well section">
+                <div id="error1" class="alert alert-danger" style="display:none">
+                    <h1>Oeps! Er is iets fout gegaan.</h1>
+                    <p>Als je denkt dat je je klas of testnummer verkeert hebt ingevuld, ga dan terug naar de vorige pagina.</p>
+                    <p>Als je denkt dat het iets anders is, vraag het dan aan een begeleider.</p>
+                    <p><a class="btn btn-warning" href="start.html">Vorige pagina</a></p>
+                    <p class="sub"></p>
+                </div>
+                <div id="noerror1">
+                    <h1>Laten we beginnen, dit is het scenario:</h1>
+                    <p>
+                        Je bent uitgenodigt op een spelshow!<br>
+                        Hieronder staan <span class="mhp-numDeur">%deuren%</span> deuren.<br>
+                        Achter slechts één deur staat een prijs.<br>
+                        Klik op een deur om het te selecteren.<br>
+                    </p>
+                    <!--<div class="input-group mhp-inp-first-div">
+                        <span class="input-group-addon">Deur</span>
+                        <input type="number" name="deur" required class="form-control mhp-inp-first" min="1">
+                        <span class="input-group-addon btn btn-success cont">Verder</span>
+                    </div>-->
+                    <p><a class="btn btn-success cont1" style="display:none">Verder</a></p>
+                    <br>
+                    <div id="warning1" class="alert alert-warning" style="display:none">
+                        <h3>Oeps! De deur die je ingevuld hebt is niet mogelijk.</h3>
+                        <p class="warning1-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div id="second" class="well section" style="display:none">
+                <h1>Stap 2</h1>
+                <h4>Geselecteerd: deur <span class="mhp-selected">%selected%</span></h4>
+                <br>
+                <p>
+                    De presentator van de show weet achter welke deur de prijs staat.<br>
+                    Hij opent alle deuren op twee na, die van jou en een andere deur.<br>
+                    Hij opent geen deuren met de prijs erachter.<br><br>
+                    Hij geeft jou nu de optie wil je wisselen naar duur <span class="mhp-closed"></span> of blijven bij deur <span class="mhp-selected"></span>.<br>
+                    Selecteer hieronder een deur en/of druk op verder.<br>
+                </p>
+                <p><a class="btn btn-success cont2">Verder</a></p>
+            </div>
+            <div id="#secondsw" class="alert alert-success section" style="display:none">
+                <h3>Je hebt besloten van deur te wisselen.</h3>
+            </div>
+            <div id="#secondst" class="alert alert-success section" style="display:none">
+                <h3>Je hebt besloten bij je eerste keuze te blijven.</h3>
+            </div>
+            <div id="#error3" class="alert alert-danger section" style="display:none">
+                <h3>Oeps. Het lijkt erop dat er iets is misgegaan.</h3>
+                <p class="sub">Error code: 5</p>
+            </div>
+            <div id="third" class="well section" style="display:none">
+                <div id="button">
+                    <h1>De uitslag</h1>
+                    <h4>Geselecteerd: deur <span class="mhp-selected">%selected%</span></h4>
+                    <br>
+                    <p>Het is tijd voor de uitslag, heb je de goede keuzes gemaakt?</p>
+                    <br>
+                    <p class="resul"><a class="btn btn-warning cont">Laat resultaat zien</a></p>
+                </div>
+                <div id="win" style="display:none">
+                    <h2 style="color:green">Gewonnen!</h2>
+                    <p>Achter deur <span class="mhp-selected">%selected%</span> stond de prijs!</p>
+                </div>
+                <div id="lose" style="display:none">
+                    <h2>Verloren.</h2>
+                    <p>Helaas, de prijs stond niet achter deur <span class="mhp-selected">%selected%</span>, maar achter deur <span class="mhp-win">%win%</span>.</p>
+                </div>
+                <br>
+                <p class="continue" style="display:none"><a class="btn cont">Verder</a>&nbsp<a class="btn btn-warning showAllDoors coll">Laat alle deuren zien.</a></p>
+            </div>
+            <div class="alert alert-danger section error4" style="display:none">
+                <h3>Het ziet er naar uit dat je nog niet alles hebt ingevuld.</h3>
+                <p>Vul alsjeblieft alle velden in en probeer opnieuw.</p>
+                <label><input class="noinfo" type="checkbox">&nbspIk wil geen informatie opslaan</label>
+            </div>
+            <div id="fourth" class="well section" style="display:none">
+                <h1>Tot slot</h1>
+                <p>Tot slot is er nog één vraag die beantwoord moeten worden.</p>
+                <div id="whystick" style="display:none">
+                    <form>
+                        <div class="well">
+                            <h5>Waarom heb je gekozen om niet te wisselen?</h5>
+                            <div class="radio">
+                                <label class="dontcare"><input type="radio" name="why" value="1" required>Ik wilde bij mijn eerste keuze blijven.</label><br>
+                                <label class="dontcare"><input type="radio" name="why" value="2">Geen reden.</label><br>
+                                <label class="dontcare"><input type="radio" name="why" value="3">Omdat het niks uitmaakt (50% kans op bijden deuren).</label><br>
+                                <label class="whyohwhy"><input type="radio" name="why" value="4">Anders, namelijk...</label>
+                            </div>
+                            <textarea class="form-control" id="why2" name="why2" style="display:none" rows="3" maxlength="350" placeholder="Anders, namelijk..."></textarea>
+                            <!--<p class="check">X</p>-->
+                        </div>
+                    </form>
+                </div>
+                <div id="whyswitch" style="display:none">
+                    <form>
+                        <div class="well">
+                            <h5>Waarom heb je gekozen om te wisselen?</h5>
+                            <div class="radio">
+                                <label class="dontcare"><input type="radio" name="why" value="1" required>Ik kende het driedeurenprobleem al.</label><br>
+                                <label class="dontcare"><input type="radio" name="why" value="2">Geen reden.</label><br>
+                                <label class="dontcare"><input type="radio" name="why" value="3">Het werd duidelijk omdat de deur overbleef (naast mijn eerste keuze).</label><br>
+                                <label class="whyohwhy"><input type="radio" name="why" value="4">Anders, namelijk...</label>
+                            </div>
+                            <textarea class="form-control" id="why2" name="why2" style="display:none" rows="3" maxlength="350" placeholder="Anders, namelijk..."></textarea>
+                            <!--<p class="check">X</p>
+                            <p class="check2">X</p>-->
+                        </div>
+                    </form>
+                </div>
+                <br>
+                <p class="savedata"><a class="btn btn-success cont">Resultaten opslaan en afronden</a></p>
+                <p class="nosave" style="display:none"><a class="btn btn-danger nosavebtn">Resultaten verwijderen en afronden</a></p>
+                <div class="saved" style="display:none">
+                    <h3 style="color:green">Resultaten opgeslagen.</h3>
+                    <p><a class="btn btn-success cont2" href="results.html">Naar de resultaten pagina.</a>&nbsp<a class="btn btn-warning return" href="start.html?lock=1">Terug naar de startpagina</a></p>
+                </div>
+            </div>
+            <div id="doors" class="well section"></div>
+            <div id="footer">
+                <p>Driedeurenprobleem v3.2.4 door Simon van Hus</p>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+        <script type="text/javascript" src="site/js/simulate.js"></script>
+    </body>
+</html>

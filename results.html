@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title class="+title">Resultaten</title>
+        <meta charset="UTF-8">
+        <link href="site/css/index.css" type="text/css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+        <link rel="icon" type="image/png" href="http://findicons.com/files/icons/2796/metro_uinvert_dock/128/aperture.png" />
+    </head>
+    <body>
+        <div class="content">
+            <div class="section noQuery alert alert-danger"><strong>Foutmelding!</strong> jQuery is niet goed geladen! <a href="results.html?lock=0" class="alert-link">Herlaad a.u.b. de pagina.</a></div>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <span class="navbar-brand" style="font-weight:bold">Resultaten</span>
+                <ul class="nav navbar-nav">
+                    <li class="active numbers"><a>Aantallen</a></li>
+                    <li class="nivs"><a>Leerjaren</a></li>
+                    <li class="whys"><a>Redenering</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="refresh"><p class="navbar-btn"><a class="btn btn-primary">Ververs</a></p></li>
+                    <li class="guide"><p class="navbar-btn"><a class="btn btn-success">Uitleg van het probleem</a></p></li>
+                    <li><p class="navbar-btn"><a class="btn btn-danger" href="start.html">Terug naar de startpagina</a></p></li>
+                </ul>
+            </nav>
+            <div class="section loadDone alert alert-success" style="display:none">
+                <a class="close">&times;</a>
+                <strong>Gegevens succesvol geladen.</strong>
+            </div>
+            <div class="section well">
+                <!--<h1>Resultaten:</h1>-->
+                <div id="numbers">
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Aantal tests:</td>
+                            <td id="numTests">%numTests%</td>
+                        </tr>
+                        <tr>
+                            <td>Aantal keer gewisseld:</td>
+                            <td id="numSwitch">%numSwitch%</td>
+                        </tr>
+                        <tr>
+                            <td>Aantal keer gewisseld & gewonnen:</td>
+                            <td id="numSwiWin">%numSwiWin%</td>
+                        </tr>
+                        <tr>
+                            <td>Aantal keer niet gewisseld & gewonnen:</td>
+                            <td id="numStiWin">%numStiWin%</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="nivs" style="display:none">
+                    <div id="vwo" class="well">
+                        <h3>Vwo (<span id="vwoTests">%vwoTests%</span>)</h3>
+                        <p>Verdeling per klas:</p>
+                        <div class="verdelingVwo progress">
+                            <div class="progress-bar progress-bar-success klas3" role="progressbar">1e</div>
+                            <div class="progress-bar progress-bar-warning klas4" role="progressbar">2e</div>
+                            <div class="progress-bar progress-bar-danger klas5" role="progressbar">3e</div>
+                            <div class="progress-bar progress-bar-primary klas6" role="progressbar">4e</div>
+                            <div class="progress-bar progress-bar-success progress-bar-striped klas7" role="progressbar">5e</div>
+                            <div class="progress-bar progress-bar-warning progress-bar-striped klas8" role="progressbar">6e</div>
+                        </div>
+                    </div>
+                    <div id="havo" class="well">
+                        <h3>Havo (<span id="havoTests">%havoTests%</span>)</h3>
+                        <p>Verdeling per klas:</p>
+                        <div class="verdelingHavo progress">
+                            <div class="progress-bar progress-bar-success klas9" role="progressbar">1e</div>
+                            <div class="progress-bar progress-bar-warning klas10" role="progressbar">2e</div>
+                            <div class="progress-bar progress-bar-danger klas11" role="progressbar">3e</div>
+                            <div class="progress-bar progress-bar-primary klas12" role="progressbar">4e</div>
+                            <div class="progress-bar progress-bar-success progress-bar-striped klas13" role="progressbar">5e</div>
+                        </div>
+                    </div>
+                    <div id="vmbo" class="well">
+                        <h3>Vmbo (<span id="vmboTests">%vmboTests%</span>)</h3>
+                        <p>Verdeling per klas:</p>
+                        <div class="verdelingVmbo progress">
+                            <div class="progress-bar progress-bar-success klas14" role="progressbar">1e</div>
+                            <div class="progress-bar progress-bar-warning klas15" role="progressbar">2e</div>
+                            <div class="progress-bar progress-bar-danger klas16" role="progressbar">3e</div>
+                            <div class="progress-bar progress-bar-primary klas17" role="progressbar">4e</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="whys" style="display:none">
+                    <h3>Van mensen die gewisseld hebben (<span class="switchers">%switchers%</span>):</h3>
+                    <div class="well">
+                        <h5>Ik kende het driedeurenprobleem al.</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success whys2" role="progressbar"></div>
+                        </div>
+                        <h5>Geen reden.</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success whys3" role="progressbar"></div>
+                        </div>
+                        <h5>Het werd duidelijk omdat de deur overbleef (naast mijn eerste keuze).</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success whys4" role="progressbar"></div>
+                        </div>
+                        <h5>Anders.</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success whys5" role="progressbar"></div>
+                        </div>
+                    </div>
+                    <h3>Van mensen die niet hebben gewisseld (<span class="stickers">%stickers%</span>):</h3>
+                    <div class="well">
+                        <h5>Ik wilde graag bij mijn eerste keuze blijven.</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success whys6" role="progressbar"></div>
+                        </div>
+                        <h5>Geen reden.</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success whys7" role="progressbar"></div>
+                        </div>
+                        <h5>Omdat het 'niks' uitmaakt (50% kans).</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success whys8" role="progressbar"></div>
+                        </div>
+                        <h5>Anders.</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success whys9" role="progressbar"></div>
+                        </div>
+                    </div>
+                    <br>
+                    <h3>Redenen onder 'Anders' (van wisselaars):</h3>
+                    <div class="well whySwitch why2"></div>
+                    <br>
+                    <h3>Redenen onder 'Anders' (van niet wisselaars):</h3>
+                    <div class="well whyStick why2"></div>
+                </div>
+                <div id="guide" style="display:none">
+                    <h2>Uitleg van het driedeurenprobleem:</h2>
+                    <p class="guide1">
+                        Zoals je misschien al door had zit de crux van het driedeurenprobleem in het wisselen.<br>
+                        Dit komt omdat als je wisselt je dubbel de kans hebt om te winnen. Hieronder is een voorbeeld:<br>
+                        <br>
+                        Oké, zoals bekend zijn er drie deuren waaruit je kan kiezen:<br>
+                    </p>
+                    <ul class="guide1">
+                        <li>Elke deur heeft opzichzelf een 1/3 kans om goed te zijn.</li>
+                        <li>De presentator weet achter welke deur de prijs staat.</li>
+                        <li>De presentator opent nooit de deur waarachter de prijs zich bevind.</li>
+                    </ul>
+                    <p class="guide1">
+                        <strong>Stap 1:</strong><br>
+                        Je kiest deur één. De kans dat je de goede deur hebt gekozen is 1/3, dus de kans dat je een deur zonder prijs hebt gekozen is 2/3.<br>
+                        <br><strong>Stap 2:</strong><br>
+                        De presentator opent nu een deur waarvan hij weet dat er geen prijs achter staat.<br>
+                        Let op: Als je bij stap 1 geen prijs had gekozen (2/3 kans) dan opent hij nu de enige andere deur waar geen prijs achter staat.<br>
+                        <br><strong>Stap 3:</strong><br>
+                        Je mag nu kiezen om te wisselen of niet.<br>
+                        Als je bij stap 1 geen prijs had gekozen (2/3 kans) dan, als je wisselt, wissel je naar de prijs. Dit is omdat in stap 2 de enige andere deur zonder prijs al geopent is.<br>
+                        Als je bij stap 1 geen prijs had gekozen (1/3 kans) dan, als je wisselt, wissel je uiteraard van de prijs af naar geen prijs.<br>
+                        <br><strong>Conclusie:</strong><br>
+                        Zoals je ziet, ligt de uitslag aan je originele keuze (als je wisselt).<br>
+                        Als je wisselt wil je eerst fout kiezen zodat je naar de prijs wisselt, de kans dat je fout kiest is hier 2/3 tegenover 1/3.<br>
+                        Als je niet wisselt wil je uiteraard meteen goed kiezen, de kans dat je dat doet is 1/3 tegenover 2/3.<br>
+                        Duidelijk wordt dus dat, als je wisselt, dubbel de kans hebt om goed te zitten. (2/3 als je wisselt, 1/3 als je niet wisselt)<br>
+                        Altijd wisselen dus!<br>
+                        <br>
+                    </p>
+                    <p><a class="btn btn-success butwhatif coll">Maar wat als ik nu meer dan drie deuren heb?</a></p>
+                    <p class="guide2" style="display:none">
+                        Als je meer dan drie deuren hebt wordt je winkans (als je wisselt) nog groter!<br>
+                    </p>
+                    <ul class="guide2" style="display:none">
+                        <li>Er is nog steeds 1 prijs.</li>
+                        <li>De presentator opent tijdens stap 2 nu alle deuren, behalve 2 (die jij hebt gekozen en een andere).</li>
+                        <li>De presentator opent nog steeds nooit de deur waarachter de prijs staat.</li>
+                    </ul>
+                    <p class="guide2" style="display:none">
+                        Stel je hebt 20 deuren.<br>
+                        <br><strong>Stap 1:</strong><br>
+                        De kans dat je nu in een keer goed kiest is miniem, 1/20. De kans daarentegen dat je fout kiest is nu 19/20, oftewel 19 keer zo groot.<br>
+                        <br><strong>Stap 2:</strong><br>
+                        Zoals hierboven al omschreven opent de presentator nu alle andere deuren behalve de deur waarachter de prijs staat.<br>
+                        (Als je op miraculeuze wijze toch in een keer hebt goed gekozen, dan laat de presentator een willekeurige deur dicht.)<br>
+                        <br><strong>Stap 3:</strong><br>
+                        Weer kunnen we voor de uitslag kijken naar je originele keuze (als je hebt gewisseld).<br>
+                        Als je wisselt wil je dus wederom bij de eerste keuze fout zitten, waarvoor je een 19/20 kans tegenover een 1/20 kans hebt.<br>
+                        Als je niet wisselt wil je uiteraard meteen goed zitten, daarvoor heb je een 1/20 kans tegenover een 19/20 kans.
+                        <strong>Hierbij is de kans op winst dus 19 keer groter als je wisselt!</strong>
+                    </p>
+                </div>
+            </div>
+            <div id="footer">
+                <p>Driedeurenprobleem v3.2.4 door Simon van Hus</p>
+            </div>
+        </div>
+        <div class="lock" style="display:none; background-color:#EFCC00; color:black;">
+            <div class="lockC">
+                <h1>Deze pagina is nog onder constructie.</h1>
+                <h3>Toegang tot deze pagina wordt per standaard geweigerd.<br>De pagina kan geen of onjuiste informatie weergeven.</h3>
+                <p>Als je denkt dat je dat aankan druk dan op 'X' op je toetsenbord.</p>
+            </div>
+            <img src="http://www.iconsdb.com/icons/preview/black/alert-xxl.png" />
+        </div>
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="site/js/results.js"></script>
+        <!--<script type="text/javascript" src="site/js/lock.js"></script>-->
+    </body>
+</html>

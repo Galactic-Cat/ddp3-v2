@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title class="+title">Harde Data</title>
+        <meta charset="UTF-8">
+        <link href="site/css/index.css" type="text/css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+        <link rel="icon" type="image/png" href="http://findicons.com/files/icons/2796/metro_uinvert_dock/128/aperture.png" />
+    </head>
+    <body>
+        <style>.section { overflow-y: auto !important }</style>
+        <div class="content">
+            <div class="section noQuery alert alert-danger"><strong>Foutmelding!</strong> jQuery is niet goed geladen! <a href="results.html?lock=0" class="alert-link">Herlaad a.u.b. de pagina.</a></div>
+            <nav class="navbar navbar-default navbar-fixed-top normNav">
+                    <span class="navbar-brand" style="font-weight:bold">Harde Data</span>
+                    <ul class="nav navbar-nav">
+                        <style>.navbar-btn { margin-right: 3px }</style>
+                        <li><p class="navbar-btn"><a class="btn btn-warning" href="start.html">Startpagina</a></p></li>
+                        <li><p class="navbar-btn"><a class="btn btn-warning" href="results.html">Resultaten</a></p></li>
+                        <li>
+                            <div class="btn-group navbar-btn dSimul">
+                                <button type="button" class="btn btn-warning dropdown-toggle">
+                                    Simulatie <span class="caret"></span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            <div class="well dSimulBar" style="display:none;z-index:2">
+                <br><br>
+                <form action="simulate.html">
+                    <div class="input-group">
+                        <span class="input-group-addon">Testnummer</span>
+                        <input type="number" id="testcode" name="testcode" min="3" max="100" required class="form-control">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">Richting</span>
+                        <select id="niv" name="niv" required class="form-control"><option disabled selected value><!--niks--></option><option value="vwo">vwo</option><option value="havo">havo</option><option value="vmbo">vmbo</option></select>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">Leerjaar</span>
+                        <input type="number" id="jaar" name="jaar" required class="form-control" min="1" max="6">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-success mhp-start">Start Simulatie</button>
+                </form>
+            </div>
+            <div class="well section">
+                <table id="data" class="table"></table>
+            </div>
+            <div id="footer">
+                <p>Driedeurenprobleem v3.2.4 door Simon van Hus</p>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+        <script type="text/javascript" src="site/js/data.js"></script>
+    </body>
+</html>
