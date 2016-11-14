@@ -1,4 +1,4 @@
-/* global $ */
+/* global $ firebase*/
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -26,6 +26,7 @@ var win = Math.floor(Math.random() * testcode) + 1;
 var check = null;
 var why2 = null;
 var pick = true;
+var database = firebase.database();
 //var ress = "No result yet.";
 
 var finish = function finish(nnn) {
@@ -65,7 +66,17 @@ var saveAll = function saveAll() {
     }
     if (check != "4") { why2 = "N/A"; }
     if (niv == "vwo") { niv = 3; } else if (niv == "havo") { niv = 2; } else if (niv == "vmbo") { niv = 1; }
-    $.post("https://ddp3-cloned-mastergrid.c9users.io/site/php/save.php", {testcode:testcode,niveau:niv,jaar:jaar,mhc:mhc,win:win,why:check,why2:why2});
+    var newKey = database.ref().child('results').push().key;
+    database.ref('results/' + newKey).set({
+        testcode: parseInt(testcode),
+        niveau: niv,
+        jaar: parseInt(jaar),
+        switch: mhc,
+        win: win,
+        why: parseInt(check),
+        why2: why2
+    });
+    return true;
 };
 
 var runSimul = function runSimul() {
@@ -151,12 +162,15 @@ var runSimul = function runSimul() {
         if ((check == null) || (check == 4 && why2 == null)) {
             $(".error4").slideDown(del);
         } else {
-            saveAll();
-            $(".savedata").slideUp(del);
-            $(".error4").slideUp(del);
-            $(".saved").slideDown(del);
-            $("#fourth").children("p").slideUp(del);
-            $("#fourth").children(".well").slideUp(del);
+            if (saveAll() == true) {
+                $(".savedata").slideUp(del);
+                $(".error4").slideUp(del);
+                $(".saved").slideDown(del);
+                $("#fourth").children("p").slideUp(del);
+                $("#fourth").children(".well").slideUp(del);
+            } else {
+                $(".error4").text("Een onverwachte fout is opgetreden, probeer het later opnieuw.");
+            }
         }
     });
     $(".nosavebtn").click(function() {
