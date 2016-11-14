@@ -68,12 +68,12 @@ var saveAll = function saveAll() {
     if (niv == "vwo") { niv = 3; } else if (niv == "havo") { niv = 2; } else if (niv == "vmbo") { niv = 1; }
     var newKey = database.ref().child('results').push().key;
     database.ref('results/' + newKey).set({
-        testcode: parseInt(testcode),
+        testcode: parseInt(testcode, 10),
         niveau: niv,
-        jaar: parseInt(jaar),
+        jaar: parseInt(jaar, 10),
         switch: mhc,
         win: win,
-        why: parseInt(check),
+        why: parseInt(check, 10),
         why2: why2
     });
     return true;
