@@ -1,13 +1,33 @@
-/* global $ */
+/* global $ firebase*/
 
 var del = 300;
+var database = firebase.database();
 
 var getData = function getData(callback) {
-    $.get("https://ddp3-cloned-mastergrid.c9users.io/site/php/getAll.php",'',function(data) {
-        console.log(data);
-        var array = JSON.parse(data);
-        console.log(array);
-        callback(array);
+    var idn,id,tc,nv,jr,sw,wi,wy,wt;
+    idn = 1;
+    id = [];
+    tc = [];
+    nv = [];
+    jr = [];
+    sw = [];
+    wi = [];
+    wy = [];
+    wt = [];
+    database.ref('results').once('value', function(snapshot) {
+        snapshot.forEach(function(child) {
+            var perform = child.val();
+            id.push(idn);
+            idn++;
+            tc.push(perform.testcode);
+            nv.push(perform.niveau);
+            jr.push(perform.jaar);
+            sw.push(perform.switch);
+            wi.push(perform.win);
+            wy.push(perform.why);
+            wt.push(perform.why2);
+        });
+        callback([id,tc,nv,jr,sw,wi,wy,wt]);
     });
 };
 
@@ -28,7 +48,7 @@ $(document).ready(function() {
         var wi = data[5];
         var wy = data[6];
         var wt = data[7];
-        console.log(id);
+        //console.log(id);
         for (var i = 0; i < id.length; i++) {
             if (nv[i] == 3) { nv[i] = "vwo"}
             else if (nv[i] == 2) { nv[i] = "havo"}

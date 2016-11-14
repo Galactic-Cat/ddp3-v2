@@ -58,7 +58,18 @@
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAgv09PcGxfcWLCURbNZsVsPf1n41v-8-Y",
+            authDomain: "ddp3v2.firebaseapp.com",
+            databaseURL: "https://ddp3v2.firebaseio.com",
+            storageBucket: "ddp3v2.appspot.com",
+            messagingSenderId: "761304008948"
+        };
+        firebase.initializeApp(config);
+        </script>
         <script type="text/javascript" src="site/js/data.js"></script>
     </body>
 </html>
