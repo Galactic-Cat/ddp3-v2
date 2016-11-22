@@ -4,7 +4,7 @@ var database = firebase.database();
 
 var getCode = function getCode(callback) {
     var datalist = database.ref('code');
-    datalist.on('value', function(snapshot) {
+    datalist.once('value', function(snapshot) {
         callback(snapshot.val());
     });
 };
