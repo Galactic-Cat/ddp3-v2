@@ -25,8 +25,8 @@
                     <p>
                         Je bent uitgenodigt op een spelshow!<br>
                         Hieronder staan <span class="mhp-numDeur">%deuren%</span> deuren.<br>
-                        Achter slechts één deur staat een prijs.<br>
-                        Klik op een deur om het te selecteren.<br>
+                        <strong>Achter één van de deuren staat een prijs.</strong><br>
+                        Klik op een deur om die te selecteren. En druk daarna op 'Verder'.<br>
                     </p>
                     <!--<div class="input-group mhp-inp-first-div">
                         <span class="input-group-addon">Deur</span>
@@ -47,10 +47,11 @@
                 <br>
                 <p>
                     De presentator van de show weet achter welke deur de prijs staat.<br>
-                    Hij opent alle deuren op twee na, die van jou en een andere deur.<br>
-                    Hij opent geen deuren met de prijs erachter.<br><br>
+                    Hij opent alle deuren op twee na: die van jou (deur <span class="mhp-selected"></span>) en een deur <span class="mhp-closed"></span>.<br>
+                    Hij opent geen deuren met de prijs erachter.<br>
+                    <strong>Dus achter één van de deuren hieronder, staat de prijs.</strong>
                     Hij geeft jou nu de optie wil je wisselen naar duur <span class="mhp-closed"></span> of blijven bij deur <span class="mhp-selected"></span>.<br>
-                    Selecteer hieronder een deur en/of druk op verder.<br>
+                    Als je wil wisselen klik dan eerst op de deur, en daarna op verder.<br>
                 </p>
                 <p><a class="btn btn-success cont2">Verder</a></p>
             </div>
@@ -98,8 +99,8 @@
                             <h5>Waarom heb je gekozen om niet te wisselen?</h5>
                             <div class="radio">
                                 <label class="dontcare"><input type="radio" name="why" value="1" required>Ik wilde bij mijn eerste keuze blijven.</label><br>
-                                <label class="dontcare"><input type="radio" name="why" value="2">Geen reden.</label><br>
-                                <label class="dontcare"><input type="radio" name="why" value="3">Omdat het niks uitmaakt (50% kans op bijden deuren).</label><br>
+                                <label class="dontcare"><input type="radio" name="why" value="2">Het was een gok.</label><br>
+                                <label class="dontcare"><input type="radio" name="why" value="3">Omdat het niks uitmaakt (50% kans op beide deuren).</label><br>
                                 <label class="whyohwhy"><input type="radio" name="why" value="4">Anders, namelijk...</label>
                             </div>
                             <textarea class="form-control" id="why2" name="why2" style="display:none" rows="3" maxlength="350" placeholder="Anders, namelijk..."></textarea>
@@ -113,8 +114,8 @@
                             <h5>Waarom heb je gekozen om te wisselen?</h5>
                             <div class="radio">
                                 <label class="dontcare"><input type="radio" name="why" value="1" required>Ik kende het driedeurenprobleem al.</label><br>
-                                <label class="dontcare"><input type="radio" name="why" value="2">Geen reden.</label><br>
-                                <label class="dontcare"><input type="radio" name="why" value="3">Het werd duidelijk omdat de deur overbleef (naast mijn eerste keuze).</label><br>
+                                <label class="dontcare"><input type="radio" name="why" value="2">Het was een gok.</label><br>
+                                <label class="dontcare"><input type="radio" name="why" value="3">Omdat deze deur van alle deuren als enige overbleef (naast mijn eerste keuze) en daar dus waarschijnlijk de prijs achter stond.</label><br>
                                 <label class="whyohwhy"><input type="radio" name="why" value="4">Anders, namelijk...</label>
                             </div>
                             <textarea class="form-control" id="why2" name="why2" style="display:none" rows="3" maxlength="350" placeholder="Anders, namelijk..."></textarea>
